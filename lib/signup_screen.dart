@@ -17,7 +17,8 @@ class _SignupScreenState extends State<SignupScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Colors.blue,
+          iconTheme: const IconThemeData(color: Colors.white),
+          backgroundColor: Colors.deepPurple,
           title: const Text(
             'Sign Up',
             style: TextStyle(color: Colors.white),
@@ -85,13 +86,33 @@ class _SignupScreenState extends State<SignupScreen> {
                 },
               ),
               const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {
+              InkWell(
+                onTap: () {
                   if (_formKey.currentState!.validate()) {
                     Navigator.pushNamed(context, '/home');
                   }
                 },
-                child: const Text('Sign Up'),
+                child: Container(
+                  height: 50,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.deepPurple),
+                  child: Center(
+                    child: const Text(
+                      "Sign Up",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                  // child: ElevatedButton(
+                  //   onPressed: () {
+                  //     if (_formKey.currentState!.validate()) {
+                  //       Navigator.pushNamed(context, '/home');
+                  //     }
+                  //   },
+                  //   child: const Text('Sign Up'),
+                  // ),
+                ),
               ),
               TextButton(
                 onPressed: () => Navigator.pushNamed(context, '/login'),

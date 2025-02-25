@@ -2,6 +2,8 @@ import 'package:ecommerce_app/main.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -61,19 +63,26 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: TextField(
-          onChanged: filterSearchResults,
-          decoration: const InputDecoration(
-              hintText: 'Search Products...',
-              border: InputBorder.none,
-              hintStyle: TextStyle(color: Colors.white70),
-              suffixIcon: Icon(
-                Icons.search,
-                color: Colors.white,
-              )),
-          style: const TextStyle(color: Colors.white),
+        iconTheme: IconThemeData(color: Colors.white),
+        title: Row(
+          children: [
+            Expanded(
+              child: TextField(
+                onChanged: filterSearchResults,
+                decoration: const InputDecoration(
+                    hintText: 'Search Products...',
+                    border: InputBorder.none,
+                    hintStyle: TextStyle(color: Colors.white70),
+                    suffixIcon: Icon(
+                      Icons.search,
+                      color: Colors.white,
+                    )),
+                style: const TextStyle(color: Colors.white),
+              ),
+            ),
+          ],
         ),
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.deepPurple,
       ),
       body: GridView.builder(
         padding: const EdgeInsets.all(10),

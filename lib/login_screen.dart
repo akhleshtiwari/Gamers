@@ -16,7 +16,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Colors.blue,
+          backgroundColor: Colors.deepPurple,
           title: const Text(
             'Login',
             style: TextStyle(color: Colors.white),
@@ -70,13 +70,25 @@ class _LoginScreenState extends State<LoginScreen> {
                 },
               ),
               const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {
+              InkWell(
+                onTap: () {
                   if (_formKey.currentState!.validate()) {
                     Navigator.pushNamed(context, '/home');
                   }
                 },
-                child: const Text('Login'),
+                child: Container(
+                  height: 50,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.deepPurple),
+                  child: Center(
+                    child: const Text(
+                      "Login",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
               ),
               TextButton(
                 onPressed: () => Navigator.pushNamed(context, '/signup'),
