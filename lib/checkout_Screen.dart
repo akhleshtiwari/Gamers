@@ -9,36 +9,42 @@ class CheckoutScreen extends StatelessWidget {
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Colors.white),
         backgroundColor: Colors.deepPurple,
+        elevation: 0,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(bottom: Radius.circular(15)),
+        ),
         title: const Text(
           'Checkout',
         ),
         titleTextStyle: const TextStyle(color: Colors.white),
       ),
-      body: Center(
+      body: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('Confirm Your Order', style: TextStyle(fontSize: 20)),
-            InkWell(
-              onTap: () {
-                Navigator.pushNamedAndRemoveUntil(
-                    context, '/home', (route) => false);
-              },
-              child: Container(
-                height: 50,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.deepPurple),
-                child: const Center(
-                  child: Text(
-                    "Place Order",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
+            Text('Confirm Your Order', style: TextStyle(fontSize: 20)),
+          ],
+        ),
+      ),
+      bottomNavigationBar: InkWell(
+        onTap: () {
+          Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false);
+        },
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            height: 50,
+            width: double.infinity,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                color: Colors.deepPurple),
+            child: const Center(
+              child: Text(
+                "Place Order",
+                style: TextStyle(color: Colors.white),
               ),
             ),
-          ],
+          ),
         ),
       ),
     );

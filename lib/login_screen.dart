@@ -17,6 +17,10 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       appBar: AppBar(
           backgroundColor: Colors.deepPurple,
+          elevation: 0,
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(bottom: Radius.circular(15)),
+          ),
           title: const Text(
             'Login',
             style: TextStyle(color: Colors.white),
@@ -32,6 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 controller: _emailController,
                 decoration: InputDecoration(
                   labelText: 'Email',
+                  suffixIcon: const Icon(Icons.email_outlined),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
@@ -47,13 +52,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   return null;
                 },
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               TextFormField(
                 controller: _passwordController,
                 decoration: InputDecoration(
                   labelText: 'Password',
+                  suffixIcon: const Icon(Icons.remove_red_eye),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
@@ -82,8 +88,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       color: Colors.deepPurple),
-                  child: Center(
-                    child: const Text(
+                  child: const Center(
+                    child: Text(
                       "Login",
                       style: TextStyle(color: Colors.white),
                     ),

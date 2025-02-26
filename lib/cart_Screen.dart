@@ -28,6 +28,10 @@ class _CartScreenState extends State<CartScreen> {
       appBar: AppBar(
         backgroundColor: Colors.deepPurple,
         iconTheme: const IconThemeData(color: Colors.white),
+        elevation: 0,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(bottom: Radius.circular(15)),
+        ),
         title: const Text(
           'Cart',
         ),

@@ -19,6 +19,10 @@ class _SignupScreenState extends State<SignupScreen> {
       appBar: AppBar(
           iconTheme: const IconThemeData(color: Colors.white),
           backgroundColor: Colors.deepPurple,
+          elevation: 0,
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(bottom: Radius.circular(15)),
+          ),
           title: const Text(
             'Sign Up',
             style: TextStyle(color: Colors.white),
@@ -98,8 +102,8 @@ class _SignupScreenState extends State<SignupScreen> {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       color: Colors.deepPurple),
-                  child: Center(
-                    child: const Text(
+                  child: const Center(
+                    child: Text(
                       "Sign Up",
                       style: TextStyle(color: Colors.white),
                     ),
